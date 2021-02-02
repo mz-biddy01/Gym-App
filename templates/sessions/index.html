@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sessions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Instructor Name</th>
+  </tr>
+  {% for session in sessions %}
+  <tr>
+    <td><a href="/sessions/{{ session.id }}"> {{session.name}} </a></td>
+    <td>|</td>
+    <td>{{ session.instructor_name}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

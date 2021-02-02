@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Gallery</h1>
+
+<body>
+    <div class="flex-container">
+        <div class="gallery">
+            <a target="_blank" href="gym-hero">
+                <img src="{{url_for('static', filename='images/gym-hero.jpg')}}" alt="gym hero" width="200" height="200">
+            </a>
+            <div class="desc">Equipments</div>
+        </div>
+        <div class="gallery">
+          <a target="_blank" href="download.jpeg">
+              <img src="{{url_for('static', filename='images/download.jpeg')}}" alt="gym hero" width="200" height="200">
+          </a>
+          <div class="desc">Yoga Class</div>
+      </div>
+      <div class="gallery">
+          <a target="_blank" href="129965.jpg">
+              <img src="{{url_for('static', filename='images/129965.jpg')}}" alt="gym hero" width="200" height="250">
+          </a>
+          <div class="desc">Swimming Class</div>
+          </div>
+      
+      <div class="gallery">
+          <a target="_blank" href="5af1a5bd73797.jpeg">
+              <img src="{{url_for('static', filename='images/5af1a5bd73797.jpeg')}}" alt="gym hero" width="200" height="200">
+          </a>
+          <div class="desc">Boxing</div>
+          </div>
+      <div class="gallery">
+          <a target="_blank" href="9f173b4b87fe75b8b6e3d6e168a89b80.jpg">
+              <img src="{{url_for('static', filename='images/9f173b4b87fe75b8b6e3d6e168a89b80.jpg')}}" alt="gym hero" width="200" height="200">
+          </a>
+          <div class="desc">Cycling Class</div>
+          </div>
+        
+          <div class="gallery">
+              <a target="_blank" href="Benching_ceryl-600px.jpg">
+                  <img src="{{url_for('static', filename='images/Benching_ceryl-600px.jpg')}}" alt="gym hero" width="200" height="200">
+              </a>
+              <div class="desc">Weightlifting Class</div>
+              </div>
+      
+          </div>
+</body>
+
+{% endblock %}

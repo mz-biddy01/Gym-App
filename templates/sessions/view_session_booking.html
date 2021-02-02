@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bookings.css') }}">
+</head>
+
+<body>  
+    <form action="/view_session_booking" method="post">
+        <label for="sessions">Choose Session: </label>
+        <select name="sessions" id="sessions">
+            <option value="{{ sessions[0].id }} - {{ sessions[0].name }} - {{ sessions[0].instructor_name }}" selected>{{ sessions[0].name }}</option>
+            {% for session in sessions[1:] %}
+                <option value="{{ session.id }} - {{ session.name }} - {{ session.instructor_name }}">{{ session.name }}</option>                
+            {% endfor %}
+        </select><br>
+
+        <input type="submit" value="Fetch">
+        <div></div>
+        <h3>Booked Members: </h3>
+        {% for member in members %}
+            <label>{{ member.first_name }} {{ member.last_name }}</label>
+        {% endfor %}
+        
+    </form>
+    
+    
+</body>
+
+{% endblock %}

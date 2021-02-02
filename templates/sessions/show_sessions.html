@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/sessions.css') }}">
+</head>
+<body>
+    <table style="width:40%">
+        <tr>
+            <th>Name of Session</th>
+            <th>Instructor</th>
+        </tr>
+        {% for session in sessions %}
+        <tr>
+            <form action="/edit_session" method="post">
+                <td><input type="text" name="new_name" value="{{ session.name }}"></td>
+                <td><input type="text" name="new_instructor" value="{{ session.instructor_name }}"></td>
+                <td><input type="submit" value="Confirm Session Change"></td>
+                <input type="hidden" name="session_id" value="{{ session.id }}">                
+            </form>            
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="show_new_session_form">
+        <button class="btn default">Add New Session</button>
+    </a>
+</body>
+
+
+
+<!-- <h1> {{session.name}} </h1>
+
+<p>instructor_name: {{ session.instructor_name }}</p>
+
+<h3>Booked by:</h3> -->
+
+
+{% endblock %}

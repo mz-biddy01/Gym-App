@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- <form action="{{ url_for('sessions.edit_session') }}" method="post"> -->
+<form action="sessions.edit_session/{{session.id}}" method="post">
+  <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{ session.name }}" required><br><br>
+  </div>
+
+  <div>
+      <label for="instructor_name">Instructor Name:</label>
+      <input type="text" id="instructor_name" name="instructor_name" value="{{ session.instructor_name }}" required><br><br>
+      <input type="hidden" id="session_id" name="session_id" value="{{ session.id }}">
+  </div>
+
+  <input type="submit" value="Update Session">
+</form>
+
+{% endblock %}

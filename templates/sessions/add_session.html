@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Add New Session</h3>
+
+    <form action="/show_new_session_form" method="post">
+      <label for="name">Name of Session</label><br>
+      <input type="text" name="name" id="name" pattern="[A-Za-z]*" required><br><br>
+      <label for="instructor">Instructor</label><br>
+      <input type="text" name="instructor" id="instructor" pattern="[A-Za-z]*" required><br><br>
+      <button class="btn default">Add New Session</button>
+    </form>
+{% endblock %}

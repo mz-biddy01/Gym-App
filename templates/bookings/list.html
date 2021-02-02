@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+</head>
+<body>
+    <table style="width:60%">
+        <tr>
+            <th>Date</th>
+            <th>Session</th>
+            <th>Participant</th>
+        </tr>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.session_id }}</td>
+            <td>{{ booking.member_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+{% endblock %}

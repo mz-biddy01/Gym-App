@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bookings.css') }}">
+</head>
+
+<body>  
+    <form action="/make_booking" method="post">
+        <label for="sessions">Choose Session: </label>
+        <select name="sessions" id="sessions">
+            <option value="{{ sessions[0].id }} - {{ sessions[0].name }}" selected>{{ sessions[0].name }}</option>
+            {% for session in sessions[1:] %}
+                <option value="{{ session.id }} - {{ session.name }}">{{ session.name }}</option>                
+            {% endfor %}
+        </select>
+
+        <label for="members">Choose Member: </label>
+        <select name="members" id="members">
+            <option value="{{members[0].id}} - {{ members[0].first_name }} {{ members[0].last_name }}" selected>{{ members[0].first_name }} {{ members[0].last_name }}</option>
+            {% for member in members[1:] %}
+                <option value="{{member.id}} - {{ member.first_name }} {{ member.last_name }}" name>{{ member.first_name }} {{ member.last_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="session-date">Choose Date: </label>
+        <input type="date" id="session-date" name="session-date" value="2021-01-10" min="2011-01-01" max="2030-12-31"><br><br>
+
+        <input type="submit" value="Make Booking">
+    </form>
+    
+    
+</body>
+
+{% endblock %}
