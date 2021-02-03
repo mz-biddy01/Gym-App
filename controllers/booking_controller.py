@@ -36,3 +36,11 @@ def make_booking():
     sessions = session_repository.select_all()
     members = member_repository.select_all()
     return render_template("bookings/make_booking.html", sessions = sessions, members = members)
+
+
+@bookings_blueprint.route("/delete_booking", methods=['POST'])
+def delete_booking():
+    booking_id = request.form['booking_id']
+    booking_id = int(booking_id)
+    booking_repository.delete(booking_id)
+    return redirect(url_for('bookings.bookings'))

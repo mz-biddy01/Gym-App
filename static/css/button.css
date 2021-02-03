@@ -1,8 +1,9 @@
 .btn {
-    border:0px none;
+    margin: auto;
+    border: 0px none;
     padding: 4px 8px;
     color: #FFFFFF;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .btn--danger {
@@ -25,3 +26,5 @@
 .btn--wrapper {
     margin: 0px 0px 30px 0px;
 }
+
+

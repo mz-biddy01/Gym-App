@@ -24,6 +24,7 @@ div.desc {
 li {
     display: inline-block;
     padding: 20px;
+    
 }
 
 body {
@@ -35,5 +36,29 @@ table, th, td {
     border-collapse: collapse;
     width: 60%;
     margin: auto;
+    padding: 10px;
+} 
+
+.flex--row > nav {
+    background-color: darkslategray
+}
+
+.btn default{
+    margin-right: auto;
+    border: none #73AD21;
+    padding: 10px;
+}
+
+body > action {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+
+.body > btn {
+    margin: auto;
+    border: none;
     padding: 10px;
 } 
